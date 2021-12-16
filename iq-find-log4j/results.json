@@ -1,0 +1,16 @@
+[
+    {
+        "applicationId": "japp1",
+        "applicationName": "java app",
+        "reportHtmlUrl": "ui/links/application/japp1/report/65da1228127e4edf84896cdbfc471290",
+        "reportUrl": "http://localhost:8070/ui/links/application/japp1/report/65da1228127e4edf84896cdbfc471290",
+        "hash": "ba55c13d7ac2fd44df9c",
+        "packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.15.0?type=jar",
+        "threatLevel": 10,
+        "dependencyData": {
+            "directDependency": true,
+            "innerSource": false
+        },
+        "stage": "build"
+    }
+]
