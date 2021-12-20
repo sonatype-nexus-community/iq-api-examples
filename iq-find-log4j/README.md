@@ -1,4 +1,4 @@
-# find-log4j
+# iq-find-log4j
 This is a sample script to search all applications that have been scanned by Lifecycle for the log4j-core components.
 
 ## Requirements

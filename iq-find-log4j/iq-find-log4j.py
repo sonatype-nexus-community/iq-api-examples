@@ -8,7 +8,7 @@ username = "admin"
 password = "admin123"
 
 iq_session = requests.Session()
-iq_session.auth = requests.auth.HTTPBasicAuth("admin", "admin123")
+iq_session.auth = requests.auth.HTTPBasicAuth(username, password)
 stages = ["build","stage-release","release","operate"]
 results = []
 
