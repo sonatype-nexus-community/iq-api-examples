@@ -17,7 +17,7 @@ def get_arguments():
     parser = argparse.ArgumentParser(description='List applications that have not scanned for a given number of days.')
     parser.add_argument('-u', '--url', help='', default="http://localhost:8070", required=False)
     parser.add_argument('-a', '--auth', help='', default="admin:admin123", required=False)
-    parser.add_argument('-d', '--days', help='', default=5, required=False)
+    parser.add_argument('-d', '--days', help='', default=7, required=False)
     args = vars(parser.parse_args())
     iq_url = args["url"]
     days = args['days']
@@ -31,6 +31,8 @@ async def main():
     args = get_arguments()
     apps = await get_apps()
     stale = []
+    output = []
+
     for app_history in asyncio.as_completed([handle_history(app) for app in apps]):
         history.update(await app_history)
 
@@ -48,7 +50,14 @@ async def main():
     else:
         print(f'All apps scanned in the last {days} days.')
 
-    save_results("results.json", stale, True)
+    for re_scan in asyncio.as_completed([re_scan_app(scan) for scan in stale]):
+        resp = await re_scan
+        text = await resp.json()
+        output.append(text)
+
+    save_results("history.json", history, True)
+    save_results("stale.json", stale, True)
+
     await iq_session.close()
 
 # ----------------------------------------------------------------------------
@@ -82,6 +91,14 @@ async def handle_history(app):
 	clean_dict(app,['id','contactUserName','applicationTags','applicationId'])
 	resp = {appId: app}
 	return resp
+
+async def re_scan_app(scan):
+    stage = scan['last_ci']['stage']
+    appId = scan['applicationId']
+    data = {"sourceStageId": stage,"targetStageId": stage}
+    url = f'{iq_url}/api/v2/evaluation/applications/{appId}/promoteScan'
+    resp = await iq_session.post(url, json=data, auth=iq_auth)
+    return resp
 
 # ----------------------------------------------------------------------------
 def pp(page):
