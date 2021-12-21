@@ -28,7 +28,7 @@ for app in apps:
 	for report in reports:
 		stage = report['stage']
 		dt = report['evaluationDate']
-		days = (today - datetime.datetime.fromisoformat(dt).replace(tzinfo=None)).days
+		days = (today - datetime.datetime.fromisoformat(dt.replace('Z', '')).replace(tzinfo=None)).days
 		print(f"Stage : '{stage}'' was scanned {days} days ago.")
 		if days < interval: print('-- skipping'); continue
 		#----------------------------------

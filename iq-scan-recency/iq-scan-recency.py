@@ -116,7 +116,7 @@ def save_results(file_name, results, indent=False):
     print(f"Json results saved to -> {file_name}")
 
 def c_eval(dt):
-    return datetime.datetime.fromisoformat(dt).replace(tzinfo=None)
+    return datetime.datetime.fromisoformat(dt.replace('Z', '')).replace(tzinfo=None)
 
 def short(dd):
     return dd.strftime("%Y-%m-%d")
