@@ -1,0 +1,6 @@
+component_identifier	effective_licenses	comment
+"{""format"": ""maven"", ""coordinates"": {""artifactId"": ""commons-lang3"", ""classifier"": """", ""extension"": ""jar"", ""groupId"": ""org.apache.commons"", ""version"": ""3.9""}}"	Apache-2.0	Automated license override.
+"{""format"": ""maven"", ""coordinates"": {""artifactId"": ""aopalliance"", ""classifier"": """", ""extension"": ""jar"", ""groupId"": ""aopalliance"", ""version"": ""1.0""}}"	PUBLIC-DOMAIN	Automated license override.
+"{""format"": ""a-name"", ""coordinates"": {""name"": ""org.apache.hadoop hadoop-yarn-common"", ""qualifier"": """", ""version"": ""3.1.1""}}"	Apache-2.0	Automated license override.
+"{""format"": ""pypi"", ""coordinates"": {""extension"": ""tar.gz"", ""name"": ""six"", ""qualifier"": """", ""version"": ""1.16.0""}}"	MIT, Apache-2.0 , BSD-3-Clause	Automated license override.
+"{""format"": ""pypi"", ""coordinates"": {""extension"": ""whl"", ""name"": ""certifi"", ""qualifier"": ""py2.py3-none-any"", ""version"": ""2021.5.30""}}"	MPL-1.0, CDDL-1.1	Automated license override.
