@@ -1,0 +1,66 @@
+[
+    {
+        "applicationId": "japp1",
+        "applicationName": "java app",
+        "reportHtmlUrl": "ui/links/application/japp1/report/ca7151dbc94e4e15bd4484d2ffcdb30a",
+        "reportUrl": "http://localhost:8070/ui/links/application/japp1/report/ca7151dbc94e4e15bd4484d2ffcdb30a",
+        "hash": "ba55c13d7ac2fd44df9c",
+        "packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.15.0?type=jar",
+        "threatLevel": 10,
+        "dependencyData": {
+            "directDependency": true,
+            "innerSource": false
+        },
+        "stage": "build"
+    },
+    {
+        "applicationId": "sample-application",
+        "applicationName": "sample-application",
+        "reportHtmlUrl": "ui/links/application/sample-application/report/d31611f391974d01a149698816e12c6b",
+        "reportUrl": "http://localhost:8070/ui/links/application/sample-application/report/d31611f391974d01a149698816e12c6b",
+        "hash": "c90b597163cd28ab6d96",
+        "packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.10.0?type=jar",
+        "threatLevel": 10,
+        "dependencyData": {
+            "directDependency": false,
+            "innerSource": false,
+            "parentComponentPurls": [
+                "pkg:maven/org.apache.struts/struts2-showcase@2.5.17?type=war",
+                "pkg:maven/org.apache.struts/struts2-rest-showcase@2.5.17?type=war"
+            ]
+        },
+        "stage": "build"
+    },
+    {
+        "applicationId": "scala-play",
+        "applicationName": "scala-play",
+        "reportHtmlUrl": "ui/links/application/scala-play/report/96778fe900934dd4866906351791117a",
+        "reportUrl": "http://localhost:8070/ui/links/application/scala-play/report/96778fe900934dd4866906351791117a",
+        "hash": "e257b0562453f73eabac",
+        "packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.0?type=jar",
+        "threatLevel": 10,
+        "dependencyData": {
+            "directDependency": true,
+            "innerSource": false
+        },
+        "stage": "build"
+    },
+    {
+        "applicationId": "struts",
+        "applicationName": "struts",
+        "reportHtmlUrl": "ui/links/application/struts/report/c686f14f5f984f53a3c38f12ae1bfe14",
+        "reportUrl": "http://localhost:8070/ui/links/application/struts/report/c686f14f5f984f53a3c38f12ae1bfe14",
+        "hash": "4382e93136c06bfb34dd",
+        "packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.12.1?type=jar",
+        "threatLevel": 10,
+        "dependencyData": {
+            "directDependency": false,
+            "innerSource": false,
+            "parentComponentPurls": [
+                "pkg:maven/org.apache.struts/struts2-showcase@2.5.28?type=war",
+                "pkg:maven/org.apache.struts/struts2-rest-showcase@2.5.28?type=war"
+            ]
+        },
+        "stage": "build"
+    }
+]
