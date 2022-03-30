@@ -1,0 +1,49 @@
+[
+    {
+        "applicationId": "sample-application",
+        "applicationName": "sample-application",
+        "reportHtmlUrl": "ui/links/application/sample-application/report/d31611f391974d01a149698816e12c6b",
+        "reportUrl": "http://localhost:8070/ui/links/application/sample-application/report/d31611f391974d01a149698816e12c6b",
+        "hash": "eea18d7f4d01f1baa1b6",
+        "packageUrl": "pkg:maven/org.springframework/spring-core@4.3.13.RELEASE?type=jar",
+        "threatLevel": 9,
+        "dependencyData": {
+            "directDependency": false,
+            "innerSource": false,
+            "parentComponentPurls": [
+                "pkg:maven/org.springframework/spring-beans@4.3.13.RELEASE?type=jar",
+                "pkg:maven/org.springframework/spring-aop@4.3.13.RELEASE?type=jar",
+                "pkg:maven/org.springframework/spring-context@4.3.13.RELEASE?type=jar",
+                "pkg:maven/org.springframework/spring-expression@4.3.13.RELEASE?type=jar",
+                "pkg:maven/org.apache.struts/struts2-junit-plugin@2.5.17?type=jar",
+                "pkg:maven/org.springframework/spring-test@4.3.13.RELEASE?type=jar",
+                "pkg:maven/org.apache.struts/struts2-spring-plugin@2.5.17?type=jar",
+                "pkg:maven/org.springframework/spring-web@4.3.13.RELEASE?type=jar",
+                "pkg:maven/org.apache.struts/struts2-testng-plugin@2.5.17?type=jar"
+            ]
+        },
+        "stage": "build"
+    },
+    {
+        "applicationId": "struts",
+        "applicationName": "struts",
+        "reportHtmlUrl": "ui/links/application/struts/report/c686f14f5f984f53a3c38f12ae1bfe14",
+        "reportUrl": "http://localhost:8070/ui/links/application/struts/report/c686f14f5f984f53a3c38f12ae1bfe14",
+        "hash": "a8b090664504b833e2d5",
+        "packageUrl": "pkg:maven/org.springframework/spring-core@4.3.26.RELEASE?type=jar",
+        "threatLevel": 1,
+        "dependencyData": {
+            "directDependency": false,
+            "innerSource": false,
+            "parentComponentPurls": [
+                "pkg:maven/org.springframework/spring-beans@4.3.26.RELEASE?type=jar",
+                "pkg:maven/org.springframework/spring-aop@4.3.26.RELEASE?type=jar",
+                "pkg:maven/org.springframework/spring-context@4.3.26.RELEASE?type=jar",
+                "pkg:maven/org.springframework/spring-expression@4.3.26.RELEASE?type=jar",
+                "pkg:maven/org.apache.struts/struts2-spring-plugin@2.5.28?type=jar",
+                "pkg:maven/org.springframework/spring-web@4.3.26.RELEASE?type=jar"
+            ]
+        },
+        "stage": "build"
+    }
+]
