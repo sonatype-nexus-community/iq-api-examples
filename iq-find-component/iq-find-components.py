@@ -1,6 +1,7 @@
 import requests
 import argparse
 import json
+import csv 
 from urllib.parse import urlencode
 
 def __parse_args():
@@ -18,7 +19,7 @@ username = args.username
 password = args.password
 iq_session = requests.Session()
 iq_session.auth = requests.auth.HTTPBasicAuth(username, password)
-stages = ["build","stage-release","release","operate"]
+stages = ["build","stage-release","release"]
 results = []
 
 print("--------------------------------------")
@@ -45,8 +46,11 @@ print(f'IQ Server Version {version}')
 
 components = []
 with open("packageUrl.txt", "r") as f:
-	for packageUrl in f:
-		components.append({"packageUrl":packageUrl.strip()})
+	for line in f:
+		packageUrl = line.strip()
+		#ignore blanks lines.
+		if len(packageUrl) > 5:
+			components.append({"packageUrl":packageUrl})
 
 for component in components:
 	for stage in stages:
@@ -54,23 +58,30 @@ for component in components:
 		params = urlencode(component).replace("%27", "%22")
 		url = f"{iq_url}/api/v2/search/component?{params}"
 		response = iq_session.get(url)
-
-		for result in response.json()['results']:
-			# to reduce noise in results
-			del result["componentIdentifier"]
-			result['stage'] = stage
-			results.append(result)
-
-output = json.dumps(results, indent=4)
+		if response.status_code == 200:
+			for result in response.json()['results']:
+				#clean-up extra data to csv below can output.
+				for field in ["componentIdentifier", "reportHtmlUrl", "dependencyData"]:
+					del result[field]
+				
+				result['stage'] = stage
+				results.append(result)
 
 print("--------------------------------------")
+output = json.dumps(results, indent=4)
 with open("results.json", "w+") as file:
 	file.write(output)
 	print("Json results saved to -> results.json")
 
 print("--------------------------------------")
 
-for result in results:
-	ll = [result["applicationId"], result["stage"], result["packageUrl"]]
-	print(ll)
+with open("results.csv", "w+") as file:
+	fields = ['applicationName', 'applicationId', 'stage', "threatLevel", 'hash', 'packageUrl', 'reportUrl']
+	writer = csv.DictWriter(file, fieldnames = fields) 
+	writer.writeheader() 
+	writer.writerows(results)
+	print("csv results saved to -> results.csv")
+
+print("--------------------------------------")
+print("--------------------------------------")
 

@@ -1,0 +1,3 @@
+applicationName,applicationId,stage,threatLevel,hash,packageUrl,reportUrl
+sample-application,sample-application,build,1,8613a7077722f1d97f8c,pkg:maven/org.springframework/spring-beans@4.3.13.RELEASE?type=jar,http://localhost:8070/ui/links/application/sample-application/report/d31611f391974d01a149698816e12c6b
+struts,struts,build,1,536bb74d60a86882c58b,pkg:maven/org.springframework/spring-beans@4.3.26.RELEASE?type=jar,http://localhost:8070/ui/links/application/struts/report/c686f14f5f984f53a3c38f12ae1bfe14
