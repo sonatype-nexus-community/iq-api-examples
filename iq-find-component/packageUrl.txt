@@ -1,1 +1,1 @@
-pkg:maven/org.springframework/spring-core@*
+pkg:maven/org.springframework/spring-beans@*
