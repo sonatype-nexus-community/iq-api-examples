@@ -1,1 +1,2 @@
 pkg:maven/org.springframework/spring-core@*
+pkg:maven/org.springframework.cloud/spring-cloud-function-context@*
