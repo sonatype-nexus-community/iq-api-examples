@@ -1,0 +1,1012 @@
+{
+    "labels":
+    [
+        {
+            "color": "dark-red",
+            "description": "The runtime class is loaded by the class loader",
+            "id": "90b8f295cf774c5da3a23a3fc12426e4",
+            "label": "Runtime-Class-Loaded",
+            "labelLowercase": "runtime-class-loaded",
+            "ownerId": "ROOT_ORGANIZATION_ID"
+        },
+        {
+            "color": "light-purple",
+            "description": "Component available for runtime agent.",
+            "id": "183d7e5b8fa848e4969652fcc8b4fe40",
+            "label": "Runtime-Enabled",
+            "labelLowercase": "runtime-enabled",
+            "ownerId": "ROOT_ORGANIZATION_ID"
+        },
+        {
+            "color": "dark-red",
+            "description": "The vulnerable runtime method was called within the vulnerable class",
+            "id": "3746c97b71c241c89f2ac5966e2e59eb",
+            "label": "Runtime-Method-Called",
+            "labelLowercase": "runtime-method-called",
+            "ownerId": "ROOT_ORGANIZATION_ID"
+        },
+        {
+            "color": "dark-red",
+            "description": "The vulnerable class has a vulnerable method signature and that signature was found in the specific class",
+            "id": "28f8f2c0a18f4f29b1792b1f86172418",
+            "label": "Runtime-Method-Loaded",
+            "labelLowercase": "runtime-method-loaded",
+            "ownerId": "ROOT_ORGANIZATION_ID"
+        }
+    ],
+    "licenseThreatGroupLicenses":
+    [],
+    "licenseThreatGroups":
+    [],
+    "policies":
+    [
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "9"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                        }
+                    ],
+                    "id": "e306d10810214080a2e0866de19ceb96",
+                    "name": "Critical risk CVSS score",
+                    "operator": "AND"
+                }
+            ],
+            "id": "71cd7b56d1734ec8a06d8cb3c1002e93",
+            "legacyViolationAllowed": false,
+            "name": "Security-Critical",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 10
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "9"
+                        }
+                    ],
+                    "id": "71025d932b9a44ddb27cc09cc99287b1",
+                    "name": "Method called, CVSS greater than 9",
+                    "operator": "AND"
+                }
+            ],
+            "id": "7fbc104eb24d484d8e622502b474d306",
+            "legacyViolationAllowed": false,
+            "name": "Security-Critical-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 10
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "9"
+                        }
+                    ],
+                    "id": "b6599420702b436eb7bf43d06e6180ce",
+                    "name": "Class not loaded, CVSS greater than 9",
+                    "operator": "AND"
+                },
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "9"
+                        }
+                    ],
+                    "id": "caf7949d4b0e417eb12401de2fe99d4a",
+                    "name": "Method not called, CVSS greater than 9",
+                    "operator": "AND"
+                }
+            ],
+            "id": "8eb0b2768dd64a7c97f278ea29e8bc8a",
+            "legacyViolationAllowed": false,
+            "name": "Security-Critical-Downgrade",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 5
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "9"
+                        }
+                    ],
+                    "id": "e5f5c3aa5d2b440d9be3c98750096954",
+                    "name": "Class loaded, CVSS greater than 9",
+                    "operator": "AND"
+                }
+            ],
+            "id": "d3cd80b0b504464b877ae891da831ffd",
+            "legacyViolationAllowed": false,
+            "name": "Security-Critical-Partial-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 9
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "7"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "9"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                        }
+                    ],
+                    "id": "df760c373b9d45fbad333839e8492600",
+                    "name": "High risk CVSS score",
+                    "operator": "AND"
+                }
+            ],
+            "id": "7d7893d7d25a4e59b85b296bdcc35f03",
+            "legacyViolationAllowed": false,
+            "name": "Security-High",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 9
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "7"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "9"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        }
+                    ],
+                    "id": "7761bd29b1aa4ea196ced58e754ba51a",
+                    "name": "Method called, CVSS between 7 to 9",
+                    "operator": "AND"
+                }
+            ],
+            "id": "0b5d1b4cd69e4f1c821ff1222dc02c2f",
+            "legacyViolationAllowed": false,
+            "name": "Security-High-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 9
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "9"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "7"
+                        }
+                    ],
+                    "id": "27404f0c820043088e2c664676c754d8",
+                    "name": "Class not loaded, CVSS between 7 to 9",
+                    "operator": "AND"
+                },
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "9"
+                        },
+                        {
+                            "conditionIndex": 4,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "7"
+                        }
+                    ],
+                    "id": "a63e72b1170a43c3b855b79f823d586b",
+                    "name": "Method not called, CVSS between 7 to 9",
+                    "operator": "AND"
+                }
+            ],
+            "id": "bc605a21108d45bca5a0f2090ff0a036",
+            "legacyViolationAllowed": false,
+            "name": "Security-High-Downgrade",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 4
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "7"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "9"
+                        }
+                    ],
+                    "id": "d111d89cc09c4f97a7bc3ad00d21441e",
+                    "name": "Class loaded, CVSS between 7 to 9",
+                    "operator": "AND"
+                }
+            ],
+            "id": "09448e46bba544a892ccdbbc4c064c08",
+            "legacyViolationAllowed": false,
+            "name": "Security-High-Partial-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 8
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                        }
+                    ],
+                    "id": "23fe0cd6cca94e51ad7a718954230b5d",
+                    "name": "Low risk CVSS score",
+                    "operator": "AND"
+                }
+            ],
+            "id": "1248f52f1e6748e7aaa4703335bfe340",
+            "legacyViolationAllowed": true,
+            "name": "Security-Low",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 3
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "4"
+                        }
+                    ],
+                    "id": "7f391ed6cb0b46db9daf2e859942d75d",
+                    "name": "Method called, CVSS less than 4",
+                    "operator": "AND"
+                }
+            ],
+            "id": "a1ed4dae42d4443ca9e33730c649a739",
+            "legacyViolationAllowed": false,
+            "name": "Security-Low-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 3
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "4"
+                        }
+                    ],
+                    "id": "f5f64774f5ce45d388a3d6ab6e0973f2",
+                    "name": "Class not loaded, CVSS less than 4",
+                    "operator": "AND"
+                },
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "4"
+                        }
+                    ],
+                    "id": "819e9b25036542b7b934b99ea10365dc",
+                    "name": "Method not called, CVSS less than 4",
+                    "operator": "AND"
+                }
+            ],
+            "id": "f8a632ea999e4df0b7176ff1f7862264",
+            "legacyViolationAllowed": false,
+            "name": "Security-Low-Downgrade",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 1
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "4"
+                        }
+                    ],
+                    "id": "13a098003d8c455cbe00d20e39b9f54e",
+                    "name": "Class loaded, CVSS less than 4",
+                    "operator": "AND"
+                }
+            ],
+            "id": "cbe2d770118c4ddd8b04b321e21914a3",
+            "legacyViolationAllowed": false,
+            "name": "Security-Low-Partial-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 2
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "7"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                        }
+                    ],
+                    "id": "dee178d9a82548058342df61c035acfd",
+                    "name": "Medium risk CVSS score",
+                    "operator": "AND"
+                }
+            ],
+            "id": "4aa27755b5fe44b2b28de2d919cee034",
+            "legacyViolationAllowed": true,
+            "name": "Security-Medium",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 7
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "4"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "7"
+                        }
+                    ],
+                    "id": "7bcab2443fb7436f9da51e7aaa249dc4",
+                    "name": "Method called, CVSS between 4 to 7",
+                    "operator": "AND"
+                }
+            ],
+            "id": "35aa5f5e70ba4b53b165023ec792a375",
+            "legacyViolationAllowed": false,
+            "name": "Security-Medium-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 7
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "4"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "7"
+                        }
+                    ],
+                    "id": "b5a19096385b4c63a428e98996bc49d2",
+                    "name": "Class not loaded, CVSS between 4 to 7",
+                    "operator": "AND"
+                },
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "7"
+                        },
+                        {
+                            "conditionIndex": 4,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "4"
+                        }
+                    ],
+                    "id": "e1fd532ad28b4e4dba21ce778c09b366",
+                    "name": "Method not called, CVSS between 4 to 7",
+                    "operator": "AND"
+                }
+            ],
+            "id": "f11509c0efd7410fb9d96fee5403ac85",
+            "legacyViolationAllowed": false,
+            "name": "Security-Medium-Downgrade",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 3
+        },
+        {
+            "actions":
+            {},
+            "constraints":
+            [
+                {
+                    "conditions":
+                    [
+                        {
+                            "conditionIndex": 0,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "4"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": "<",
+                            "value": "7"
+                        }
+                    ],
+                    "id": "8126e03643b04341ad79ced4ecbac65b",
+                    "name": "Class loaded, CVSS between 4 to 7",
+                    "operator": "AND"
+                }
+            ],
+            "id": "4dc1a5e3708f4c43812c02455ea00222",
+            "legacyViolationAllowed": false,
+            "name": "Security-Medium-Partial-Confirmed",
+            "notifications":
+            {
+                "jiraNotifications":
+                [],
+                "roleNotifications":
+                [],
+                "userNotifications":
+                [],
+                "webhookNotifications":
+                []
+            },
+            "ownerId": "ROOT_ORGANIZATION_ID",
+            "policyActionsOverrideAllowed": false,
+            "policyActionsOverrides": null,
+            "policyNotificationsOverrideAllowed": false,
+            "policyNotificationsOverrides": null,
+            "threatLevel": 6
+        }
+    ],
+    "policyTags":
+    [],
+    "tags":
+    []
+}
