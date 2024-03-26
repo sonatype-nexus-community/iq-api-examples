@@ -4,7 +4,7 @@
         {
             "color": "dark-red",
             "description": "The runtime class is loaded by the class loader",
-            "id": "90b8f295cf774c5da3a23a3fc12426e4",
+            "id": "6a13a93551de41f2bc53185d392f7ae8",
             "label": "Runtime-Class-Loaded",
             "labelLowercase": "runtime-class-loaded",
             "ownerId": "ROOT_ORGANIZATION_ID"
@@ -12,7 +12,7 @@
         {
             "color": "light-purple",
             "description": "Component available for runtime agent.",
-            "id": "183d7e5b8fa848e4969652fcc8b4fe40",
+            "id": "f2ce893824704e1bb7c50e1eda3f6ad9",
             "label": "Runtime-Enabled",
             "labelLowercase": "runtime-enabled",
             "ownerId": "ROOT_ORGANIZATION_ID"
@@ -20,7 +20,7 @@
         {
             "color": "dark-red",
             "description": "The vulnerable runtime method was called within the vulnerable class",
-            "id": "3746c97b71c241c89f2ac5966e2e59eb",
+            "id": "5e7e82eb7d4b4eb684bc79dd63bac524",
             "label": "Runtime-Method-Called",
             "labelLowercase": "runtime-method-called",
             "ownerId": "ROOT_ORGANIZATION_ID"
@@ -28,7 +28,7 @@
         {
             "color": "dark-red",
             "description": "The vulnerable class has a vulnerable method signature and that signature was found in the specific class",
-            "id": "28f8f2c0a18f4f29b1792b1f86172418",
+            "id": "c9dedf320f03433dba685818473fad11",
             "label": "Runtime-Method-Loaded",
             "labelLowercase": "runtime-method-loaded",
             "ownerId": "ROOT_ORGANIZATION_ID"
@@ -58,15 +58,15 @@
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "e306d10810214080a2e0866de19ceb96",
+                    "id": "7a1516f6566145ad8a8f3e612b922408",
                     "name": "Critical risk CVSS score",
                     "operator": "AND"
                 }
             ],
-            "id": "71cd7b56d1734ec8a06d8cb3c1002e93",
+            "id": "5f87e896953d46578fefc671a2fd56f2",
             "legacyViolationAllowed": false,
             "name": "Security-Critical",
             "notifications":
@@ -99,7 +99,7 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 1,
@@ -108,12 +108,12 @@
                             "value": "9"
                         }
                     ],
-                    "id": "71025d932b9a44ddb27cc09cc99287b1",
-                    "name": "Method called, CVSS greater than 9",
+                    "id": "fc67c1e69cae4d369574ca482778500c",
+                    "name": "Vulnerable Method Called",
                     "operator": "AND"
                 }
             ],
-            "id": "7fbc104eb24d484d8e622502b474d306",
+            "id": "39d5ad9d53f74c02aea43481388f28cd",
             "legacyViolationAllowed": false,
             "name": "Security-Critical-Confirmed",
             "notifications":
@@ -146,17 +146,23 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": ">=",
                             "value": "9"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "b6599420702b436eb7bf43d06e6180ce",
-                    "name": "Class not loaded, CVSS greater than 9",
+                    "id": "295939f405a44c3283be0e14838fec6f",
+                    "name": "Class not Loaded",
                     "operator": "AND"
                 },
                 {
@@ -166,19 +172,19 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 3,
@@ -187,12 +193,12 @@
                             "value": "9"
                         }
                     ],
-                    "id": "caf7949d4b0e417eb12401de2fe99d4a",
-                    "name": "Method not called, CVSS greater than 9",
+                    "id": "7a931e6782ed40fc9aee8aa3d520a07d",
+                    "name": "Class and method loaded, method not called",
                     "operator": "AND"
                 }
             ],
-            "id": "8eb0b2768dd64a7c97f278ea29e8bc8a",
+            "id": "b3b853ada0a144b38d60215b3c46d84c",
             "legacyViolationAllowed": false,
             "name": "Security-Critical-Downgrade",
             "notifications":
@@ -225,13 +231,13 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
@@ -240,12 +246,12 @@
                             "value": "9"
                         }
                     ],
-                    "id": "e5f5c3aa5d2b440d9be3c98750096954",
-                    "name": "Class loaded, CVSS greater than 9",
+                    "id": "c09698a75de6467fbf8f10f450c4c974",
+                    "name": "Class loaded - CVSS >= 9",
                     "operator": "AND"
                 }
             ],
-            "id": "d3cd80b0b504464b877ae891da831ffd",
+            "id": "57ecb0ce2e004545834cf584fdf128b8",
             "legacyViolationAllowed": false,
             "name": "Security-Critical-Partial-Confirmed",
             "notifications":
@@ -290,15 +296,15 @@
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "df760c373b9d45fbad333839e8492600",
+                    "id": "fa85ac5bba294a6f8e9267d4fd67a5de",
                     "name": "High risk CVSS score",
                     "operator": "AND"
                 }
             ],
-            "id": "7d7893d7d25a4e59b85b296bdcc35f03",
+            "id": "5cad370ec8f24cd09ec1b36ebf5314f4",
             "legacyViolationAllowed": false,
             "name": "Security-High",
             "notifications":
@@ -343,15 +349,15 @@
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         }
                     ],
-                    "id": "7761bd29b1aa4ea196ced58e754ba51a",
-                    "name": "Method called, CVSS between 7 to 9",
+                    "id": "c6b11166c46a4505af1771d00e9293ca",
+                    "name": "Method Called and CVSS between 5 and 7",
                     "operator": "AND"
                 }
             ],
-            "id": "0b5d1b4cd69e4f1c821ff1222dc02c2f",
+            "id": "8a8d3a71348e419d99e07d01b394cdac",
             "legacyViolationAllowed": false,
             "name": "Security-High-Confirmed",
             "notifications":
@@ -384,7 +390,7 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
@@ -397,10 +403,16 @@
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": ">=",
                             "value": "7"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "27404f0c820043088e2c664676c754d8",
-                    "name": "Class not loaded, CVSS between 7 to 9",
+                    "id": "86e708fb72e54c218a91ed2f9c05432c",
+                    "name": "Class not loaded and CVSS 7-9",
                     "operator": "AND"
                 },
                 {
@@ -410,19 +422,19 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 3,
@@ -437,12 +449,12 @@
                             "value": "7"
                         }
                     ],
-                    "id": "a63e72b1170a43c3b855b79f823d586b",
-                    "name": "Method not called, CVSS between 7 to 9",
+                    "id": "58722bbded404117a107d3aae02a2566",
+                    "name": "Class and method loaded, method not called",
                     "operator": "AND"
                 }
             ],
-            "id": "bc605a21108d45bca5a0f2090ff0a036",
+            "id": "c6c6d62fd4a440059de1ae63584c64f2",
             "legacyViolationAllowed": false,
             "name": "Security-High-Downgrade",
             "notifications":
@@ -475,13 +487,13 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
@@ -496,12 +508,12 @@
                             "value": "9"
                         }
                     ],
-                    "id": "d111d89cc09c4f97a7bc3ad00d21441e",
-                    "name": "Class loaded, CVSS between 7 to 9",
+                    "id": "46b7830b9e20471b99d5df5d01c19373",
+                    "name": "Class Loaded and CVSS between 7-9",
                     "operator": "AND"
                 }
             ],
-            "id": "09448e46bba544a892ccdbbc4c064c08",
+            "id": "02a659b29bb647faaddbc30872013665",
             "legacyViolationAllowed": false,
             "name": "Security-High-Partial-Confirmed",
             "notifications":
@@ -533,22 +545,28 @@
                         {
                             "conditionIndex": 0,
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "0"
+                        },
+                        {
+                            "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": "<",
                             "value": "4"
                         },
                         {
-                            "conditionIndex": 1,
+                            "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "23fe0cd6cca94e51ad7a718954230b5d",
+                    "id": "73a6f59b5c5e47e6bce363a3909a25c3",
                     "name": "Low risk CVSS score",
                     "operator": "AND"
                 }
             ],
-            "id": "1248f52f1e6748e7aaa4703335bfe340",
+            "id": "2c2815de6f55479993fc785f829cb07c",
             "legacyViolationAllowed": true,
             "name": "Security-Low",
             "notifications":
@@ -581,21 +599,27 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 1,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "0"
+                        },
+                        {
+                            "conditionIndex": 2,
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": "<",
                             "value": "4"
                         }
                     ],
-                    "id": "7f391ed6cb0b46db9daf2e859942d75d",
-                    "name": "Method called, CVSS less than 4",
+                    "id": "a3523ecf230f4515a0c8f6ee272301a9",
+                    "name": "Method Called and CVSS between 0 and 4",
                     "operator": "AND"
                 }
             ],
-            "id": "a1ed4dae42d4443ca9e33730c649a739",
+            "id": "581a1c1a30fa4554981b528b83dd3db0",
             "legacyViolationAllowed": false,
             "name": "Security-Low-Confirmed",
             "notifications":
@@ -627,18 +651,30 @@
                         {
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
-                            "operator": "is not",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "operator": "is",
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         },
                         {
                             "conditionIndex": 1,
+                            "conditionTypeId": "Label",
+                            "operator": "is not",
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
+                        },
+                        {
+                            "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "0"
+                        },
+                        {
+                            "conditionIndex": 3,
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": "<",
                             "value": "4"
                         }
                     ],
-                    "id": "f5f64774f5ce45d388a3d6ab6e0973f2",
-                    "name": "Class not loaded, CVSS less than 4",
+                    "id": "5857d6cb49e547b4ba78308a3cc5277f",
+                    "name": "Class not loaded, CVSS < 4",
                     "operator": "AND"
                 },
                 {
@@ -648,33 +684,39 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 3,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "0"
+                        },
+                        {
+                            "conditionIndex": 4,
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": "<",
                             "value": "4"
                         }
                     ],
-                    "id": "819e9b25036542b7b934b99ea10365dc",
-                    "name": "Method not called, CVSS less than 4",
+                    "id": "59eadf89b1dc41999fabc68c5847213b",
+                    "name": "Method not loaded, CVSS < 4",
                     "operator": "AND"
                 }
             ],
-            "id": "f8a632ea999e4df0b7176ff1f7862264",
+            "id": "a60b2d550efd43eca12993c6e4347bc4",
             "legacyViolationAllowed": false,
             "name": "Security-Low-Downgrade",
             "notifications":
@@ -707,27 +749,33 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
+                            "conditionTypeId": "SecurityVulnerabilitySeverity",
+                            "operator": ">=",
+                            "value": "0"
+                        },
+                        {
+                            "conditionIndex": 3,
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": "<",
                             "value": "4"
                         }
                     ],
-                    "id": "13a098003d8c455cbe00d20e39b9f54e",
-                    "name": "Class loaded, CVSS less than 4",
+                    "id": "9140cd62020b45e495fcf6c4c574237f",
+                    "name": "Class Loaded and CVSS between 0 and 4",
                     "operator": "AND"
                 }
             ],
-            "id": "cbe2d770118c4ddd8b04b321e21914a3",
+            "id": "fb28a1c396134d3299cfb8ac47285dbe",
             "legacyViolationAllowed": false,
             "name": "Security-Low-Partial-Confirmed",
             "notifications":
@@ -772,15 +820,15 @@
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "183d7e5b8fa848e4969652fcc8b4fe40"
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "dee178d9a82548058342df61c035acfd",
+                    "id": "d750f46c30444438a5ce42355d365e4d",
                     "name": "Medium risk CVSS score",
                     "operator": "AND"
                 }
             ],
-            "id": "4aa27755b5fe44b2b28de2d919cee034",
+            "id": "a96ee8cd446342d1800678baef37657f",
             "legacyViolationAllowed": true,
             "name": "Security-Medium",
             "notifications":
@@ -813,7 +861,7 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 1,
@@ -828,12 +876,12 @@
                             "value": "7"
                         }
                     ],
-                    "id": "7bcab2443fb7436f9da51e7aaa249dc4",
-                    "name": "Method called, CVSS between 4 to 7",
+                    "id": "2f1f47b65e9b4fec976ceaaae4679876",
+                    "name": "Method called and CVSS bewteen 0 and 5",
                     "operator": "AND"
                 }
             ],
-            "id": "35aa5f5e70ba4b53b165023ec792a375",
+            "id": "3d883acebb79497585ee979666d10a7c",
             "legacyViolationAllowed": false,
             "name": "Security-Medium-Confirmed",
             "notifications":
@@ -866,7 +914,7 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
@@ -879,10 +927,16 @@
                             "conditionTypeId": "SecurityVulnerabilitySeverity",
                             "operator": "<",
                             "value": "7"
+                        },
+                        {
+                            "conditionIndex": 3,
+                            "conditionTypeId": "Label",
+                            "operator": "is",
+                            "value": "f2ce893824704e1bb7c50e1eda3f6ad9"
                         }
                     ],
-                    "id": "b5a19096385b4c63a428e98996bc49d2",
-                    "name": "Class not loaded, CVSS between 4 to 7",
+                    "id": "a96ddcd06b5b435c954e672c46e4f10d",
+                    "name": "Class not loaded and CVSS 4-7",
                     "operator": "AND"
                 },
                 {
@@ -892,19 +946,19 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "3746c97b71c241c89f2ac5966e2e59eb"
+                            "value": "5e7e82eb7d4b4eb684bc79dd63bac524"
                         },
                         {
                             "conditionIndex": 3,
@@ -919,12 +973,12 @@
                             "value": "4"
                         }
                     ],
-                    "id": "e1fd532ad28b4e4dba21ce778c09b366",
-                    "name": "Method not called, CVSS between 4 to 7",
+                    "id": "c5fa69d94b8e4a3a90c72979dad6da48",
+                    "name": "Class and method loaded, method not called",
                     "operator": "AND"
                 }
             ],
-            "id": "f11509c0efd7410fb9d96fee5403ac85",
+            "id": "2eae7510e79342feb8a6b7262e92ecca",
             "legacyViolationAllowed": false,
             "name": "Security-Medium-Downgrade",
             "notifications":
@@ -943,7 +997,7 @@
             "policyActionsOverrides": null,
             "policyNotificationsOverrideAllowed": false,
             "policyNotificationsOverrides": null,
-            "threatLevel": 3
+            "threatLevel": 2
         },
         {
             "actions":
@@ -957,13 +1011,13 @@
                             "conditionIndex": 0,
                             "conditionTypeId": "Label",
                             "operator": "is",
-                            "value": "90b8f295cf774c5da3a23a3fc12426e4"
+                            "value": "6a13a93551de41f2bc53185d392f7ae8"
                         },
                         {
                             "conditionIndex": 1,
                             "conditionTypeId": "Label",
                             "operator": "is not",
-                            "value": "28f8f2c0a18f4f29b1792b1f86172418"
+                            "value": "c9dedf320f03433dba685818473fad11"
                         },
                         {
                             "conditionIndex": 2,
@@ -978,12 +1032,12 @@
                             "value": "7"
                         }
                     ],
-                    "id": "8126e03643b04341ad79ced4ecbac65b",
-                    "name": "Class loaded, CVSS between 4 to 7",
+                    "id": "d60a0f227f6442228a9664f55a8db48c",
+                    "name": "Class Loaded and CVSS between 4 and 7",
                     "operator": "AND"
                 }
             ],
-            "id": "4dc1a5e3708f4c43812c02455ea00222",
+            "id": "6f0fba0f2db640879cace4e3e6332114",
             "legacyViolationAllowed": false,
             "name": "Security-Medium-Partial-Confirmed",
             "notifications":
