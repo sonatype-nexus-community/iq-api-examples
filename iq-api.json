@@ -128,10 +128,6 @@
             "description": "Use this REST API to manage license overrides for components in your applicationsorganizations and repositories."
         },
         {
-            "name": "Repository Firewall",
-            "description": "Use this REST API for managing and monitoring Repository Firewall features, including metrics, repository management, quarantine operations, and namespace confusion prevention."
-        },
-        {
             "name": "Organizations",
             "description": "Use this REST API to create new organizations, retrieve, edit or delete existing organizations."
         },
@@ -170,6 +166,10 @@
         {
             "name": "Repositories",
             "description": "Use this REST API to manage quarantined components."
+        },
+        {
+            "name": "Repository Firewall",
+            "description": "Use this REST API for managing and monitoring Repository Firewall features, including metrics, repository management, quarantine operations, and namespace confusion prevention."
         },
         {
             "name": "Role Memberships",
